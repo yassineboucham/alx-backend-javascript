@@ -1,30 +1,48 @@
-export default class Currency {
-  constructor(code, name) {
-    this.code = code;
+export default class HolbertonCourse {
+  constructor(name, length, students) {
     this.name = name;
-  }
-
-  get code() {
-    return this._code;
+    this.length = length;
+    this.students = students;
   }
 
   get name() {
     return this._name;
   }
 
-  set code(value) {
-    this._code = value;
+  get length() {
+    return this._length;
+  }
+
+  get students() {
+    return this._students;
   }
 
   set name(value) {
-    this._name = value;
+    if (typeof value === 'string') {
+      this._name = value;
+    } else {
+      throw TypeError('Name must be a string');
+    }
   }
 
-  displayFullCurrency() {
-    return `${this._name} (${this._code})`;
+  set length(value) {
+    if (typeof value === 'number') {
+      this._length = value;
+    } else {
+      throw TypeError('Length must be a number');
+    }
+  }
+
+  set students(value) {
+    if (value instanceof Array) {
+      for (const element of value) {
+        if (!(typeof element === 'string')) {
+          throw TypeError('Students must be an array of strings');
+        }
+        this._students = value;
+      }
+    } else {
+      throw TypeError('Students must be an array');
+    }
   }
 }
-// const dollar = new Currency('$', 'Dollar');
-
-// console.log(dollar);
-// console.log(dollar.displayFullCurrency());
