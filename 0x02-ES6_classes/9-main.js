@@ -3,7 +3,7 @@ import listOfStudents, { StudentHolberton, HolbertonClass } from "./9-hoisting.j
 console.log(listOfStudents);
 
 const listPrinted = listOfStudents.map(
-    student => student.fullStudentDescription
+  student => student.fullStudentDescription
 );
 
 console.log(listPrinted)
