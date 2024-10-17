@@ -1,7 +1,7 @@
 export default function getStudentIdsSum(students) {
-  let sum = students.reduce(sm, 0);
-  function sm(accumulator, item){
+  function sm(accumulator, item) {
     return accumulator + item.id;
   }
+  const sum = students.reduce(sm, 0);
   return sum;
 }
