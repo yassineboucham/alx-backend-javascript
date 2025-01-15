@@ -1,14 +1,14 @@
 export interface Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
-  fullTimeEmployee: boolean;
-  yearsOfExperience?: number;
-  location: string;
-  [index:string]: any;
+  readonly firstName: string,
+  readonly lastName: string,
+  fullTimeEmployee: boolean,
+  yearsOfExperience?: number,
+  location: string,
+  [index:string]: any,
 }
 
-export interface Directors extends Teacher {
-  numberOfReports: number;
+export interface Director extends Teacher {
+  numberOfReport: number,
 }
 
 export interface printTeacherFunction {
@@ -44,8 +44,4 @@ export class StudentClass implements IStudentClass {
   displayName() {
     return this._firstName;
   }
-}
-
-export function createStudent(ctor: IStudentClassConstructor, firstName: string, lastName: string): IStudentClass {
-  return new ctor(firstName, lastName);
 }
